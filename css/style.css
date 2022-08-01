@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
+body a {
+  text-decoration: none;
+  color: inherit; }
+
+body ul {
+  list-style: none; }
+
+body h1, body .h1, body h2, body .h2, body h3, body .h3 {
+  font-family: "Abril Fatface", sans-serif; }
+
+body h4, body .h4, body h5, body .h5, body h6, body .h6 {
+  font-family: "Kanit", sans-serif; }
+
+body p, body span {
+  font-family: "Quicksand", sans-serif; }
+
 /*!
    * Bootstrap  v5.2.0 (https://getbootstrap.com/)
    * Copyright 2011-2022 The Bootstrap Authors
@@ -8367,3 +8389,17 @@ textarea.form-control-lg {
     display: inline-flex !important; }
   .d-print-none {
     display: none !important; } }
+
+body .icon-wspp {
+  position: fixed;
+  display: flex;
+  right: 20px;
+  bottom: 20px;
+  font-size: 30px;
+  background: #25D366;
+  color: #FFF;
+  border-radius: 50%;
+  padding: 10px; }
+
+body footer {
+  background-color: #85586F; }

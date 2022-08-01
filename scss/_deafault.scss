@@ -1,0 +1,23 @@
+@import "variable";
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+    ul{
+        list-style: none;
+    }
+    h1, h2, h3{
+        font-family: $_fontTitle;
+    }
+    h4, h5, h6{
+        font-family: $_fontMedium;
+    }
+    p,span{
+        font-family: $_fontText;
+    }
+}
