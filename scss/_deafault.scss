@@ -8,8 +8,12 @@ body{
         text-decoration: none;
         color: inherit;
     }
-    ul{
+    a:hover{
+        color: inherit;
+    }
+    ul,ol{
         list-style: none;
+        padding: 0rem;
     }
     h1, h2, h3{
         font-family: $_fontTitle;
@@ -19,5 +23,8 @@ body{
     }
     p,span{
         font-family: $_fontText;
+    }
+    footer{
+        padding-bottom: 0.5rem;
     }
 }

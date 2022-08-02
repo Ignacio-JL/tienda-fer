@@ -1,0 +1,17 @@
+body{
+    footer{
+        .footer-redes{
+            .footer-redes-link{
+                display: flex;
+                justify-content: space-evenly;
+                font-size: 2rem;
+            }
+        }
+        .footer-categorias{
+            ul{
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
+}
