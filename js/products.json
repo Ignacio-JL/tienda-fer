@@ -1,7 +1,122 @@
 [
     {
-        "name": "Remera",
+        "id": 1,
+        "name": "Blazer",
         "stock": 15,
-        "precio": 2500 
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ["/assets/blazerexample.jpg", "/assets/blazerexample.jpg", "/assets/blazerexample.jpg"]
+    },
+    {
+        "id": 2,
+        "name": "Blazer",
+        "stock": 15,
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ""
+    },
+    {
+        "id": 3,
+        "name": "Blazer",
+        "stock": 15,
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ""
+    },
+    {
+        "id": 4,
+        "name": "Blazer",
+        "stock": 15,
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ""
+    },
+    {
+        "id": 5,
+        "name": "Blazer",
+        "stock": 15,
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ""
+    },
+    {
+        "id": 6,
+        "name": "Blazer",
+        "stock": 15,
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ""
+    },
+    {
+        "id": 7,
+        "name": "Blazer",
+        "stock": 15,
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ""
+    },
+    {
+        "id": 8,
+        "name": "Blazer",
+        "stock": 15,
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ""
+    },
+    {
+        "id": 9,
+        "name": "Blazer",
+        "stock": 15,
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ""
+    },
+    {
+        "id": 10,
+        "name": "Blazer",
+        "stock": 15,
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ""
+    },
+    {
+        "id": 11,
+        "name": "Blazer",
+        "stock": 15,
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ""
+    },
+    {
+        "id": 12,
+        "name": "Blazer",
+        "stock": 15,
+        "price": 2500,
+        "category": "Campera",
+        "size":[1,2,3],
+        "material": "Algodon",
+        "image": ""
     }
 ]
