@@ -6,6 +6,7 @@
    */
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -8406,6 +8407,38 @@ body footer .footer-categorias ul {
   display: flex;
   justify-content: space-around; }
 
+body .swiper .custom-card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  background: #DEB6AB;
+  border-radius: 10%;
+  box-shadow: -11px 11px 9px #AC7D88; }
+  body .swiper .custom-card img {
+    border-radius: 1rem;
+    width: 220px; }
+  body .swiper .custom-card a {
+    background: #85586F;
+    padding: 0.3rem 4rem;
+    font-size: 1.1rem;
+    color: #fff;
+    /* border-top-right-radius: 10px; */
+    border-radius: 4px 20px 4px 20px; }
+
+body .swiper .swiper-button-next:after,
+body .swiper .swiper-button-prev:after {
+  color: #85586F;
+  font-size: 2.5rem;
+  margin-right: 1rem; }
+
+body nav {
+  background-color: #AC7D88; }
+
+body .main-container {
+  background-color: #F8ECD1; }
+
 body .icon-wspp {
   position: fixed;
   display: flex;
@@ -8415,7 +8448,8 @@ body .icon-wspp {
   background: #25D366;
   color: #FFF;
   border-radius: 50%;
-  padding: 10px; }
+  padding: 10px;
+  z-index: 999; }
 
 body footer {
   background-color: #85586F; }

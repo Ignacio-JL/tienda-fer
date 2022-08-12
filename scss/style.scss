@@ -2,7 +2,14 @@
 @import "deafault";
 @import "variable";
 @import "footer";
+@import "cards";
 body{
+    nav{
+        background-color: $_colorRoseOld;
+    }
+    .main-container{
+        background-color: $_colorMelange;
+    }
     
     .icon-wspp{
         position: fixed;
@@ -14,6 +21,7 @@ body{
         color: #FFF;
         border-radius: 50%;
         padding: 10px;
+        z-index: 999;
     }
     footer{
         background-color: $_colorPurpleLight;
