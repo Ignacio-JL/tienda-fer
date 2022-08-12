@@ -4,9 +4,9 @@
    * Copyright 2011-2022 Twitter, Inc.
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    */
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -8438,6 +8438,21 @@ body nav {
 
 body .main-container {
   background-color: #F8ECD1; }
+  body .main-container .container-categorias div {
+    justify-content: space-evenly; }
+  body .main-container .container-categorias .category {
+    font-family: "Hammersmith One", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    border-radius: 10px;
+    width: 40%;
+    margin: 0.5rem;
+    color: #FFF;
+    background: radial-gradient(circle, #f552f1 0%, #cfaabd 100%); }
+  body .main-container .container-categorias .category:hover {
+    background: radial-gradient(circle, #f142ec 0%, #1a1618 100%); }
 
 body .icon-wspp {
   position: fixed;

@@ -9,6 +9,26 @@ body{
     }
     .main-container{
         background-color: $_colorMelange;
+        .container-categorias{  
+            div{
+                justify-content: space-evenly;
+            }
+            .category{
+                font-family: $_fontTitleSecond;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 3rem;
+                border-radius: 10px;
+                width: 40%;
+                margin: 0.5rem;
+                color: #FFF;
+                background: radial-gradient(circle, #f552f1 0%, #cfaabd 100%);
+            }
+            .category:hover{
+                background: radial-gradient(circle, #f142ec 0%, #1a1618 100%);
+            }
+        }
     }
     
     .icon-wspp{

@@ -11,112 +11,112 @@
     },
     {
         "id": 2,
-        "name": "Blazer",
+        "name": "campera",
         "stock": 15,
         "price": 2500,
         "category": "Campera",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ""
+        "image": ["/assets/campera.jpg", "/assets/campera.jpg", "/assets/campera.jpg"]
     },
     {
         "id": 3,
-        "name": "Blazer",
+        "name": "Buzo",
         "stock": 15,
         "price": 2500,
         "category": "Campera",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ""
+        "image": ["/assets/buzo.jpg","/assets/buzo.jpg","/assets/buzo.jpg"]
     },
     {
         "id": 4,
-        "name": "Blazer",
+        "name": "Pollera",
         "stock": 15,
         "price": 2500,
-        "category": "Campera",
+        "category": "Pollera",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ""
+        "image": ["/assets/pollera.jpg", "/assets/pollera.jpg","/assets/pollera.jpg"]
     },
     {
         "id": 5,
-        "name": "Blazer",
+        "name": "Pollera Linea",
         "stock": 15,
         "price": 2500,
-        "category": "Campera",
+        "category": "Pollera",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ""
+        "image": ["/assets/pollera2.jpg", "/assets/pollera2.jpg", "/assets/pollera2.jpg"]
     },
     {
         "id": 6,
-        "name": "Blazer",
+        "name": "Pollera Doble",
         "stock": 15,
         "price": 2500,
-        "category": "Campera",
+        "category": "Pollera",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ""
+        "image": ["/assets/pollera3.jpg", "/assets/pollera3.jpg", "/assets/pollera3.jpg"]
     },
     {
         "id": 7,
-        "name": "Blazer",
+        "name": "Conjunto",
         "stock": 15,
         "price": 2500,
-        "category": "Campera",
+        "category": "Conjunto",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ""
+        "image": ["/assets/conjunto.jpg", "/assets/conjunto.jpg", "/assets/conjunto.jpg"]
     },
     {
         "id": 8,
-        "name": "Blazer",
+        "name": "Conjunto 2022",
         "stock": 15,
         "price": 2500,
-        "category": "Campera",
+        "category": "Conjunto",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ""
+        "image": ["/assets/conjunto2.jpg", "/assets/conjunto2.jpg", "/assets/conjunto2.jpg"]
     },
     {
         "id": 9,
-        "name": "Blazer",
+        "name": "Conjunto Plane",
         "stock": 15,
         "price": 2500,
-        "category": "Campera",
+        "category": "Conjunto",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ""
+        "image": ["/assets/conjunto3.jpg", "/assets/conjunto3.jpg", "/assets/conjunto3.jpg"]
     },
     {
         "id": 10,
-        "name": "Blazer",
+        "name": "Remera Line",
         "stock": 15,
         "price": 2500,
-        "category": "Campera",
+        "category": "Remera",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ""
+        "image": ["/assets/remera.jpg", "/assets/remera.jpg","/assets/remera.jpg"]
     },
     {
         "id": 11,
-        "name": "Blazer",
+        "name": "Remera Ras",
         "stock": 15,
         "price": 2500,
-        "category": "Campera",
+        "category": "Remera",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ""
+        "image": ["/assets/remera2.jpg", "/assets/remera2.jpg","/assets/remera2.jpg"]
     },
     {
         "id": 12,
-        "name": "Blazer",
+        "name": "Remera Style",
         "stock": 15,
         "price": 2500,
-        "category": "Campera",
+        "category": "Remera",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ""
+        "image": ["/assets/remera3.jpg", "/assets/remera3.jpg","/assets/remera3.jpg"]
     }
 ]
