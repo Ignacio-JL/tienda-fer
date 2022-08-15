@@ -43,7 +43,7 @@ function generateNodoCategory(category){
                     <h3>${prod.name}</h3>
                     <h5>${prod.category} - ${prod.material}</h5>
                     <p>$ ${prod.price}</p>
-                    <a href="#">+ Info</a>
+                    <a href="/pages/detail.html?id=${prod.id}">+ Info</a>
                     </div>
                 </div>`
     });

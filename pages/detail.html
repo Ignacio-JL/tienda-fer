@@ -1,12 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detail</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Amy | Fer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ubicanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Categorias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Camperas</a></li>
+                            <li><a class="dropdown-item" href="#">Polleras</a></li>
+                            <li><a class="dropdown-item" href="#">Conjuntos</a></li>
+                            <li><a class="dropdown-item" href="#">Remeras</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Fin Navbar -->
+
+
+    <!-- Detail Container -->
+    <div class="detail" id="detail">
+        <!-- <div class="detail-header">
+            <h2>Blazer Sans</h2>
+            <h5>Camperas</h5>
+        </div>
+        <div class="detail-image"><img src="/assets/blazerexample.jpg" alt="blazer"></div>
+        <div class="detail-images">
+            <div class="detail-images-container">
+                <img src="/assets/blazerexample.jpg" alt="blazer"><img src="/assets/blazerexample.jpg" alt="blazer"><img
+                    src="/assets/blazerexample.jpg" alt="blazer">
+            </div>
+        </div>
+        <div class="detail-info">
+            <div class="detail-info-price">
+                <h3>$ 3.000</h3>
+            </div>
+            <div class="detail-info-price-curva">
+                <h5>Precio por curva $ 5.000<i class="bi bi-question-circle"></i></h5>
+            </div>
+            <div class="detail-info-talles">
+                <p>Talles: 1 | 2 | 3 | 4 | 5</p>
+            </div>
+            <div class="detail-info-stock">
+                <p>Stock disponible</p>
+            </div>
+            <div class="detail-info-comprar">
+                <button>Comprar</button>
+            </div>
+            <div class="detail-info-icons">
+                <i class="bi bi-geo-alt"></i>
+                <i class="bi bi-truck"></i>
+                <i class="bi bi-currency-dollar"></i>
+            </div>
+        </div> -->
+    </div>
+    <!-- Fin Detail Container -->
+
     
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¿Qué es precio por curva?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El precio por curva se refiere a la compra de todos los talles de un producto</p>
+                    <p>Por ejemplo este producto cuenta con 3 talles por lo tanto una curva seria llevar:</p>
+                    <ul>
+                        <li>Este articulo en talle 1</li>
+                        <li>Este articulo en talle 2</li>
+                        <li>Este articulo en talle 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-init">
+            <h3>Tienda Fer</h3>
+            <p>Mayorista en Indumentaria DAMAS & JUVENIL</p>
+        </div>
+        <div class="footer-redes">
+            <h4>Seguinos</h4>
+            <div class="footer-redes-link">
+                <a href="#"><i class="bi bi-whatsapp"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-categorias">
+            <h4>Categorias</h4>
+            <ul>
+                <li><a href="">Camperas</a></li>
+                <li><a href="">Polleras</a></li>
+                <li><a href="">Conjunto</a></li>
+                <li><a href="">Remera</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4><a href="">Ubicanos</a></h4>
+        </div>
+        <div>
+            <h4><a href="">Preguntas frecuentes</a></h4>
+        </div>
+        <div class="footer-end">
+            <p>Buenos Aires, Argentina</p>
+        </div>
+        <div>
+            <a href="https://wa.link/npgger"><i class="bi bi-whatsapp icon-wspp"></i></a>
+        </div>
+    </footer>
+    <!-- Fin Footer -->
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+    <!-- Detail Generate -->
+    <script src="/js/detail.js"></script>
+
 </body>
+
 </html>

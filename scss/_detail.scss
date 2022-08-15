@@ -1,0 +1,97 @@
+@import "variable";
+
+body {
+    .detail {
+        display: grid;
+        width: 100%;
+        grid-template-areas: "header header header"
+            "image image image"
+            "images images images"
+            "info info info";
+
+
+
+        &-header {
+            grid-area: header;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+
+        &-image {
+            text-align: center;
+            grid-area: image;
+
+            img {
+                width: 94%;
+            }
+
+        }
+
+        &-images {
+            grid-area: images;
+            margin-top: 0.5rem;
+
+            &-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-left: 3%;
+                margin-right: 3%;
+
+                img {
+                    border: 4px solid $_colorPurpleLight;
+                    border-radius: 5px;
+                    width: 32%;
+                }
+            }
+
+        }
+
+        &-info {
+            margin: 0.5rem 1rem;
+            grid-area: info;
+
+            &-price {
+                &-curva {
+                    i {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+
+            &-stock {
+
+                text-align: center;
+                color: green;
+            }
+
+            &-comprar {
+                text-align: center;
+                button {
+                    background: #85586F;
+                    padding: 0.3rem 4rem;
+                    font-size: 1.1rem;
+                    color: #fff;
+                    border-radius: 4px 20px 4px 20px;
+                }
+            }
+
+            &-icons {
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                i {
+                    font-size: 1.5rem;
+                    border-radius: 7px;
+                    border: 2px solid gray;
+                    padding: 0 0.3rem;
+                }
+            }
+        }
+    }
+}

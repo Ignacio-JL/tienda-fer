@@ -7,6 +7,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -8382,18 +8383,40 @@ body a {
 body a:hover {
   color: inherit; }
 
-body ul, body ol {
+body ul,
+body ol {
   list-style: none;
   padding: 0rem; }
 
-body h1, body .h1, body h2, body .h2, body h3, body .h3 {
+body h1, body .h1,
+body h2,
+body .h2,
+body h3,
+body .h3 {
   font-family: "Abril Fatface", sans-serif; }
 
-body h4, body .h4, body h5, body .h5, body h6, body .h6 {
+body h4, body .h4,
+body h5,
+body .h5,
+body h6,
+body .h6 {
   font-family: "Kanit", sans-serif; }
 
-body p, body span {
+body p,
+body span {
   font-family: "Quicksand", sans-serif; }
+
+body button {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none; }
+
+body button:focus,
+body button:active,
+body button:hover {
+  outline: none;
+  border: none; }
 
 body footer {
   padding-bottom: 0.5rem; }
@@ -8432,6 +8455,61 @@ body .swiper .swiper-button-prev:after {
   color: #85586F;
   font-size: 2.5rem;
   margin-right: 1rem; }
+
+body .detail {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "header header header" "image image image" "images images images" "info info info"; }
+  body .detail-header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  body .detail-image {
+    text-align: center;
+    grid-area: image; }
+    body .detail-image img {
+      width: 94%; }
+  body .detail-images {
+    grid-area: images;
+    margin-top: 0.5rem; }
+    body .detail-images-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 3%;
+      margin-right: 3%; }
+      body .detail-images-container img {
+        border: 4px solid #85586F;
+        border-radius: 5px;
+        width: 32%; }
+  body .detail-info {
+    margin: 0.5rem 1rem;
+    grid-area: info; }
+    body .detail-info-price-curva i {
+      margin-left: 1rem; }
+    body .detail-info-stock {
+      text-align: center;
+      color: green; }
+    body .detail-info-comprar {
+      text-align: center; }
+      body .detail-info-comprar button {
+        background: #85586F;
+        padding: 0.3rem 4rem;
+        font-size: 1.1rem;
+        color: #fff;
+        border-radius: 4px 20px 4px 20px; }
+    body .detail-info-icons {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+      body .detail-info-icons i {
+        font-size: 1.5rem;
+        border-radius: 7px;
+        border: 2px solid gray;
+        padding: 0 0.3rem; }
 
 body nav {
   background-color: #AC7D88; }
