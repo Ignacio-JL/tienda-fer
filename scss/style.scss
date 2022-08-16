@@ -13,6 +13,7 @@ body{
         .container-categorias{  
             div{
                 justify-content: space-evenly;
+                width: 100%;
             }
             .category{
                 font-family: $_fontTitleSecond;
@@ -25,6 +26,9 @@ body{
                 margin: 0.5rem;
                 color: #FFF;
                 background: radial-gradient(circle, #f552f1 0%, #cfaabd 100%);
+                h4{
+                    width: 100%;
+                }
             }
             .category:hover{
                 background: radial-gradient(circle, #f142ec 0%, #1a1618 100%);

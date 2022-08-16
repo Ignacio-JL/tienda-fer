@@ -8517,7 +8517,8 @@ body nav {
 body .main-container {
   background-color: #F8ECD1; }
   body .main-container .container-categorias div {
-    justify-content: space-evenly; }
+    justify-content: space-evenly;
+    width: 100%; }
   body .main-container .container-categorias .category {
     font-family: "Hammersmith One", sans-serif;
     display: flex;
@@ -8529,6 +8530,8 @@ body .main-container {
     margin: 0.5rem;
     color: #FFF;
     background: radial-gradient(circle, #f552f1 0%, #cfaabd 100%); }
+    body .main-container .container-categorias .category h4, body .main-container .container-categorias .category .h4 {
+      width: 100%; }
   body .main-container .container-categorias .category:hover {
     background: radial-gradient(circle, #f142ec 0%, #1a1618 100%); }
 
