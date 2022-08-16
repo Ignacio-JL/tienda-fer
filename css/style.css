@@ -8529,11 +8529,11 @@ body .main-container {
     width: 40%;
     margin: 0.5rem;
     color: #FFF;
-    background: radial-gradient(circle, #f552f1 0%, #cfaabd 100%); }
+    background: radial-gradient(circle, #AC7D88 0%, #85586F 100%); }
     body .main-container .container-categorias .category h4, body .main-container .container-categorias .category .h4 {
       width: 100%; }
   body .main-container .container-categorias .category:hover {
-    background: radial-gradient(circle, #f142ec 0%, #1a1618 100%); }
+    background: radial-gradient(circle, #581e57 0%, #580831 100%); }
 
 body .icon-wspp {
   position: fixed;
