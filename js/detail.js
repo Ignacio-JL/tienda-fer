@@ -46,7 +46,7 @@ function showDetail() {
             <h3>${priceConvertToArs(product.price)}</h3>
         </div>
         <div class="detail-info-price-curva">
-            <h5>Precio por curva ${priceConvertToArs(product.price * product.size.length)}<button type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-question-circle"></i></button></h5>
+            <h5>Precio por curva ${priceConvertToArs(product.price * product.size.length)}<button type="button" class="" data-bs-toggle="modal" data-bs-target="#modal-curva"><i class="bi bi-question-circle"></i></button></h5>
         </div>
         <div class="detail-info-talles">
             <p>Talles: ${nodoTalles}</p>
@@ -58,9 +58,10 @@ function showDetail() {
             <button>Comprar</button>
         </div>
         <div class="detail-info-icons">
-            <i class="bi bi-geo-alt"></i>
-            <i class="bi bi-truck"></i>
-            <i class="bi bi-currency-dollar"></i>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-location"><i class="bi bi-geo-alt"></i></button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-send"><i class="bi bi-truck"></i></button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-pay"><i class="bi bi-currency-dollar"></i></button>
+            
         </div>
     </div>
     `
