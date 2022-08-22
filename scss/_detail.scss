@@ -41,9 +41,11 @@ body {
                 margin-right: 3%;
 
                 img {
-                    border: 4px solid $_colorPurpleLight;
                     border-radius: 5px;
                     width: 32%;
+                }
+                img#selection-img0{
+                    border: 4px solid #85586F;
                 }
             }
 

@@ -8480,9 +8480,10 @@ body .detail {
       margin-left: 3%;
       margin-right: 3%; }
       body .detail-images-container img {
-        border: 4px solid #85586F;
         border-radius: 5px;
         width: 32%; }
+      body .detail-images-container img#selection-img0 {
+        border: 4px solid #85586F; }
   body .detail-info {
     margin: 0.5rem 1rem;
     grid-area: info; }
