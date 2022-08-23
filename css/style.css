@@ -8421,6 +8421,10 @@ body button:hover {
 body footer {
   padding-bottom: 0.5rem; }
 
+body .form-select:focus {
+  border-color: #85586F;
+  box-shadow: 0 0 0 0.1rem rgba(255, 0, 132, 0.25); }
+
 body footer .footer-redes .footer-redes-link {
   display: flex;
   justify-content: space-evenly;
@@ -8511,6 +8515,21 @@ body .detail {
         border-radius: 7px;
         border: 2px solid gray;
         padding: 0 0.3rem; }
+    body .detail-info-select {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center; }
+      body .detail-info-select div {
+        width: 50%; }
+        body .detail-info-select div span {
+          margin: 0.1rem; }
+        body .detail-info-select div button {
+          background: #85586F;
+          padding: 0.1rem 1rem;
+          font-size: 1.1rem;
+          color: #fff;
+          border-radius: 4px 20px 4px 20px; }
 
 body nav {
   background-color: #AC7D88; }

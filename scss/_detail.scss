@@ -94,6 +94,25 @@ body {
                     padding: 0 0.3rem;
                 }
             }
+            &-select{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                align-items: center;
+                div{
+                    width: 50%;
+                    span{
+                        margin: 0.1rem;
+                    }
+                    button{
+                        background: #85586F;
+                        padding: 0.1rem 1rem;
+                        font-size: 1.1rem;
+                        color: #fff;
+                        border-radius: 4px 20px 4px 20px;
+                    }
+                }
+            }
         }
     }
 }

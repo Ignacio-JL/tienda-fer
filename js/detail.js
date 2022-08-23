@@ -1,5 +1,29 @@
+class Product{
+    
+    constructor(id,name,color,stock,price,category,size,material,image, quantity){
+        this.id = id;
+        this.name = name;
+        this.color = color;
+        this.stock = stock;
+        this.price = price;
+        this.category = category;
+        this.size = size;
+        this.material = material;
+        this.image = image;
+        this.quantity = quantity;
+    }
+}
+
 let product = {};
+let count = 1;
+const cartStorage = localStorage.getItem("cartFerAmy");
+
+function addCartStorage(array){
+    localStorage.setItem("cartFerAmy", JSON.stringify(array));
+}
+
 let detail = document.getElementById("detail");
+
 const setProduct = (array) => {
     let paramaterId = new URLSearchParams(window.location.search);
     product = array.find(p => p.id == paramaterId.get('id'))
@@ -19,6 +43,7 @@ fetch('/js/products.json')
     .catch(error => console.log(error));
 
 function showDetail() {
+
     let nodoImages = '';
     product.image.forEach((img, i) => {
         nodoImages += `<img id="selection-img${i}" src="${img}" alt="${product.name}">`;
@@ -30,6 +55,13 @@ function showDetail() {
         nodoTalles += `${i} | `
     }
     nodoTalles += `${product.size.length}`
+
+    let nodoColor =`<option value="0"selected>Seleccione un color</option>
+                    <option value="99">Surtido</option>`;
+    product.color.forEach(c => {
+        nodoColor += `<option value="${c}">${c}</option>`
+    });
+    nodoColor += `<option value="100">Lo aclaro con el vendedor</option>`
 
     let nodo = `
     <div class="detail-header">
@@ -52,17 +84,29 @@ function showDetail() {
         <div class="detail-info-talles">
             <p>Talles: ${nodoTalles}</p>
         </div>
+        <div class="detail-info-select">
+            <div>
+                <select class="form-select" aria-label="Default select example">
+                    ${nodoColor}
+                </select>
+            </div>
+            <div class="text-center">
+                <span>Curvas</span>
+                <button id="discountCount">-</button>
+                <span id="count">${count}</span>
+                <button id="addCount">+</button>
+            </div>
+        </div>
         <div class="detail-info-stock">
             <p>Stock disponible</p>
         </div>
         <div class="detail-info-comprar">
-            <button>Comprar</button>
+            <button id="buy">Comprar</button>
         </div>
         <div class="detail-info-icons">
             <button type="button" data-bs-toggle="modal" data-bs-target="#modal-location"><i class="bi bi-geo-alt"></i></button>
             <button type="button" data-bs-toggle="modal" data-bs-target="#modal-send"><i class="bi bi-truck"></i></button>
             <button type="button" data-bs-toggle="modal" data-bs-target="#modal-pay"><i class="bi bi-currency-dollar"></i></button>
-            
         </div>
     </div>
     `
@@ -98,6 +142,26 @@ function showDetail() {
         };
     })
 
+    document.getElementById("addCount").onclick = ()=>{
+        count = count + 1
+        document.getElementById("count").innerHTML = count;
+    };
+
+    document.getElementById("discountCount").onclick = ()=>{
+        if(count > 1){
+            count = count - 1
+            document.getElementById("count").innerHTML = count;
+        }
+    };
+
+    document.getElementById("buy").onclick= () => {
+
+        let storage  = cartStorage ? JSON.parse(cartStorage) : [];
+        storage.push(new Product(product.id, product.name, product.color, product.stock, product.price, product.category, product.size, product.material, product.image, parseInt(document.getElementById("count").textContent)))
+        addCartStorage(storage);
+//agrega un producto por cada recarga de pagina
+    }
+
 }
 
 function priceConvertToArs(value) {
@@ -107,3 +171,7 @@ function priceConvertToArs(value) {
         minimumFractionDigits: 0
     });
 }
+
+let btnAdd = document.getElementById("addCount");
+let btnDiscount = document.getElementById("discountCount");
+
