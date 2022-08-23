@@ -86,7 +86,7 @@ function showDetail() {
         </div>
         <div class="detail-info-select">
             <div>
-                <select class="form-select" aria-label="Default select example">
+                <select id="selectColor" class="form-select" aria-label="Default select example">
                     ${nodoColor}
                 </select>
             </div>
@@ -102,6 +102,10 @@ function showDetail() {
         </div>
         <div class="detail-info-comprar">
             <button id="buy">Comprar</button>
+        </div>
+        <div class="detail-info-comprado">
+            <a href="/pages/cart.html"><button>Terminar Compra</button></a>
+            <a href="/index.html"><button>Seguir viendo productos</button></a>
         </div>
         <div class="detail-info-icons">
             <button type="button" data-bs-toggle="modal" data-bs-target="#modal-location"><i class="bi bi-geo-alt"></i></button>
@@ -155,11 +159,16 @@ function showDetail() {
     };
 
     document.getElementById("buy").onclick= () => {
-
         let storage  = cartStorage ? JSON.parse(cartStorage) : [];
-        storage.push(new Product(product.id, product.name, product.color, product.stock, product.price, product.category, product.size, product.material, product.image, parseInt(document.getElementById("count").textContent)))
+        let colorSelected = document.getElementById("selectColor").value;
+        let quantity = parseInt(document.getElementById("count").textContent);
+        let productToSave = new Product(product.id, product.name, colorSelected , product.stock, product.price, product.category, product.size, product.material, product.image, quantity);
+        storage.push(productToSave);
         addCartStorage(storage);
-//agrega un producto por cada recarga de pagina
+        //agrega un producto por cada recarga de pagina
+        document.getElementsByClassName("detail-info-comprado")[0].style.display="block";
+        document.getElementsByClassName("detail-info-comprar")[0].style.display="none";
+
     }
 
 }

@@ -8,6 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -8504,6 +8505,18 @@ body .detail {
         font-size: 1.1rem;
         color: #fff;
         border-radius: 4px 20px 4px 20px; }
+    body .detail-info-comprado {
+      display: none;
+      text-align: center; }
+      body .detail-info-comprado button {
+        min-width: 50%;
+        padding: 0.3rem;
+        background: #85586F;
+        padding: 0.3rem;
+        font-size: 1.1rem;
+        color: #fff;
+        border-radius: 4px 20px 4px 20px;
+        margin-bottom: 1rem; }
     body .detail-info-icons {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
@@ -8530,6 +8543,41 @@ body .detail {
           font-size: 1.1rem;
           color: #fff;
           border-radius: 4px 20px 4px 20px; }
+
+body .cart-main .cart-content-table {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr auto; }
+  body .cart-main .cart-content-table div h6, body .cart-main .cart-content-table div .h6 {
+    height: 1.5rem;
+    border-bottom: solid 2px #AC7D88; }
+  body .cart-main .cart-content-table div:not(:last-child) {
+    border-right: solid 2px #AC7D88; }
+  body .cart-main .cart-content-table div p {
+    margin-bottom: 0; }
+
+body .cart-main .cart-content-footer {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
+  body .cart-main .cart-content-footer .optionCart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; }
+  body .cart-main .cart-content-footer .totalCart {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    body .cart-main .cart-content-footer .totalCart h5, body .cart-main .cart-content-footer .totalCart .h5 {
+      margin: 0; }
+
+body .cart-main form button {
+  padding: 0.3rem;
+  background: #85586F;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  color: #fff;
+  border-radius: 4px 20px 4px 20px; }
 
 body nav {
   background-color: #AC7D88; }

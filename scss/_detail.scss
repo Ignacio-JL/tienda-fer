@@ -45,7 +45,7 @@ body {
                     width: 32%;
                 }
                 img#selection-img0{
-                    border: 4px solid #85586F;
+                    border: 4px solid $_colorPurpleLight;
                 }
             }
 
@@ -72,11 +72,25 @@ body {
             &-comprar {
                 text-align: center;
                 button {
-                    background: #85586F;
+                    background: $_colorPurpleLight;
                     padding: 0.3rem 4rem;
                     font-size: 1.1rem;
                     color: #fff;
                     border-radius: 4px 20px 4px 20px;
+                }
+            }
+            &-comprado{
+                display: none;
+                text-align: center;
+                button{
+                    min-width: 50%;
+                    padding: 0.3rem;
+                    background: $_colorPurpleLight;
+                    padding: 0.3rem;
+                    font-size: 1.1rem;
+                    color: #fff;
+                    border-radius: 4px 20px 4px 20px;
+                    margin-bottom: 1rem;
                 }
             }
 
@@ -105,7 +119,7 @@ body {
                         margin: 0.1rem;
                     }
                     button{
-                        background: #85586F;
+                        background: $_colorPurpleLight;
                         padding: 0.1rem 1rem;
                         font-size: 1.1rem;
                         color: #fff;
