@@ -57,11 +57,11 @@ function showDetail() {
     nodoTalles += `${product.size.length}`
 
     let nodoColor =`<option value="0"selected>Seleccione un color</option>
-                    <option value="99">Surtido</option>`;
+                    <option value="Surtido">Surtido</option>`;
     product.color.forEach(c => {
         nodoColor += `<option value="${c}">${c}</option>`
     });
-    nodoColor += `<option value="100">Lo aclaro con el vendedor</option>`
+    nodoColor += `<option value="Personalizado">Lo aclaro con el vendedor</option>`
 
     let nodo = `
     <div class="detail-header">
@@ -89,6 +89,7 @@ function showDetail() {
                 <select id="selectColor" class="form-select" aria-label="Default select example">
                     ${nodoColor}
                 </select>
+                <p class="messageError"><i class="bi bi-exclamation-circle-fill"></i>Selecciona una opción</p>
             </div>
             <div class="text-center">
                 <span>Curvas</span>
@@ -161,13 +162,35 @@ function showDetail() {
     document.getElementById("buy").onclick= () => {
         let storage  = cartStorage ? JSON.parse(cartStorage) : [];
         let colorSelected = document.getElementById("selectColor").value;
-        let quantity = parseInt(document.getElementById("count").textContent);
-        let productToSave = new Product(product.id, product.name, colorSelected , product.stock, product.price, product.category, product.size, product.material, product.image, quantity);
-        storage.push(productToSave);
-        addCartStorage(storage);
-        //agrega un producto por cada recarga de pagina
-        document.getElementsByClassName("detail-info-comprado")[0].style.display="block";
-        document.getElementsByClassName("detail-info-comprar")[0].style.display="none";
+        if(colorSelected != 0){
+            document.getElementsByClassName('messageError')[0].style.display='none'
+            let count = parseInt(document.getElementById("count").textContent);
+            const isInCart = storage.find((p) => p.id == product.id);
+            if(isInCart){
+                
+                const newArray = storage.map((p)=>{
+                    if(p.id == isInCart.id){
+                        return {...p, quantity: p.quantity + count}
+                    }
+                    else{
+                        return p;
+                    }
+                })
+                console.log("rep", newArray);
+                addCartStorage(newArray);
+            }else{
+                let productToSave = new Product(product.id, product.name, colorSelected , product.stock, product.price, product.category, product.size, product.material, product.image, count);
+                storage.push(productToSave);
+                addCartStorage(storage);
+            }
+            
+            //agrega un producto por cada recarga de pagina
+            document.getElementsByClassName("detail-info-comprado")[0].style.display="block";
+            document.getElementsByClassName("detail-info-comprar")[0].style.display="none";
+        }
+        else{
+            document.getElementsByClassName('messageError')[0].style.display='block'
+        }
 
     }
 
