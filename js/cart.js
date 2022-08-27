@@ -1,6 +1,7 @@
 const getCart = () => {return JSON.parse(localStorage.getItem("cartFerAmy"))}
 const setCart = (array) => {localStorage.setItem("cartFerAmy", JSON.stringify(array))}
 const cartDOM = document.getElementById("cart-content");
+const formDom = document.getElementById("formCart")
 const getTotalPrice = () =>{
     let total = 0;
     getCart().forEach(p => {
@@ -19,7 +20,7 @@ function deleteItem(id){
 function viewCart(){
     if(getCart().length == 0){
         cartDOM.innerHTML = messageCartEmpty;
-        document.getElementById('formCart').innerHTML ='';
+        formDom.innerHTML ='';
     }
     else{
         let nodo = `<h3 class="text-center">Tu pedido</h3>
@@ -57,19 +58,20 @@ function viewCart(){
 
         cartDOM.innerHTML = nodo;
 
-        document.getElementById('formCart').innerHTML = `  <h4 class="text-center">Completa tus datos</h4>
+        formDom.innerHTML = `  <h4 class="text-center">Completa tus datos</h4>
                                                         <div>
-                                                            <input type="text" placeholder="Nombre y Apellido">
+                                                            <input id="inputName" type="text" placeholder="Nombre y Apellido">
                                                         </div>
                                                         <div>
                                                             <select name="envio" id="selectEnvio">
                                                                 <option value="0">Seleccione una opcion</option>
-                                                                <option value="local">Retira en local</option>
-                                                                <option value="envio">Envio</option>
+                                                                <option value="Local">Retira en local</option>
+                                                                <option value="Envio">Envio</option>
                                                             </select>
+                                                            <p class="messageError"><i class="bi bi-exclamation-circle-fill"></i>Selecciona una opción</p>
                                                         </div>
                                                         <div>
-                                                            <a href="#"><button>Terminar mi pedido</button></a>
+                                                            <button type="submit">Terminar mi pedido</button>
                                                         </div>`
     }
 }
@@ -82,18 +84,7 @@ const messageCartEmpty =`<h3 class="text-center">No hay productos en tu carrito<
                             <a class="message" href="/index.html">Volver a ver productos</a>
                             </div>
                         </div>`
-/*
-Salto linea %0A
-Dos puntos(:) %3A
-Coma (,) %2C
-Espacio +
 
-https://api.whatsapp.com/send?phone=+541170969187&text=
-Hola+quiero+consultar+por+el+siguiente+pedido%3A%0A
--Blazer+5+curvas%2C+color+negro+y+azul.%0A%0A
--Pollera+3+curvas%2C+color+surtido.%0A%0AMi+nombre+es+Ana+Banana+y+mi+pedido+es+para+Envio
-
-*/
 
 viewCart();
 
@@ -115,6 +106,40 @@ if(getCart().length !=0){
     }
 }
 
+/*
+Salto linea %0A
+Dos puntos(:) %3A
+Coma (,) %2C
+Espacio +
+
+https://api.whatsapp.com/send?phone=+541170969187&text=
+Hola+quiero+consultar+por+el+siguiente+pedido%3A%0A
+-Blazer+5+curvas%2C+color+negro+y+azul.%0A%0A
+-Pollera+3+curvas%2C+color+surtido.%0A%0AMi+nombre+es+Ana+Banana+y+mi+pedido+es+para+Envio
+
+*/
+
+// SendCart
+formDom.onsubmit = (e) =>{
+    e.preventDefault();
+    const selectSend = document.getElementById('selectEnvio').value;
+    let nodeProd = '';
+    if( selectSend !=0 ){
+        let name = getNameFormat(document.getElementById('inputName').value);
+        document.getElementsByClassName('messageError')[0].style.display='none';
+        getCart().forEach(prod => {
+            nodeProd += `-${prod.name}+${prod.quantity}%2C+color+${prod.color}.%0A%0A`
+        });
+        let redirectToWspp = `https://api.whatsapp.com/send?phone=+541170969187&text=`;
+        let textWspp = `Hola+quiero+consultar+por+el+siguiente+pedido%3A%0A${nodeProd}Mi+nombre+es+${name}.%0AModo+de+compra%3A+${selectSend}.`
+        window.open(`${redirectToWspp + textWspp}`, '_blank');
+        console.log(redirectToWspp + textWspp);
+    }else{
+        document.getElementsByClassName('messageError')[0].style.display='block'
+    }
+}
+
+
 function priceConvertToArs(value) {
     return value.toLocaleString('es-ar', {
         style: 'currency',
@@ -122,4 +147,11 @@ function priceConvertToArs(value) {
         minimumFractionDigits: 0
     });
 }
-{/* <p><i class="bi bi-x-circle-fill"></i>Selecciona una opción</p> */}
+
+function getNameFormat(string){
+    const search = (str) => str.indexOf(" ");
+    while (search(string) != -1) {
+        string = string.replace(' ', '+');
+    }
+    return string;
+}

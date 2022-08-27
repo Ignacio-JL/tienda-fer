@@ -8581,7 +8581,9 @@ body .cart-main {
       body .cart-main .cart-content-footer .totalCart h5, body .cart-main .cart-content-footer .totalCart .h5 {
         margin: 0;
         background-color: #000;
-        color: #fff; }
+        color: #fff;
+        border-radius: 10px;
+        padding: 0.2rem; }
   body .cart-main form {
     text-align: center;
     margin-top: 1rem; }
@@ -8590,6 +8592,13 @@ body .cart-main {
       body .cart-main form div input,
       body .cart-main form div select {
         width: 60%; }
+      body .cart-main form div p.messageError {
+        display: none;
+        color: red;
+        text-decoration: underline; }
+        body .cart-main form div p.messageError i {
+          margin-right: 0.2rem;
+          color: red; }
     body .cart-main form button {
       padding: 0.3rem;
       background: #85586F;
