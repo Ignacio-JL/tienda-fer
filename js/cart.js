@@ -61,6 +61,7 @@ function viewCart(){
         formDom.innerHTML = `  <h4 class="text-center">Completa tus datos</h4>
                                                         <div>
                                                             <input id="inputName" type="text" placeholder="Nombre y Apellido">
+                                                            <p class="messageError"><i class="bi bi-exclamation-circle-fill"></i>Complete su nombre</p>
                                                         </div>
                                                         <div>
                                                             <select name="envio" id="selectEnvio">
@@ -122,20 +123,38 @@ Hola+quiero+consultar+por+el+siguiente+pedido%3A%0A
 // SendCart
 formDom.onsubmit = (e) =>{
     e.preventDefault();
+    const errorName = document.getElementsByClassName('messageError')[0];
+    const errorSelect = document.getElementsByClassName('messageError')[1];
     const selectSend = document.getElementById('selectEnvio').value;
+    const nameInput = document.getElementById('inputName').value;
     let nodeProd = '';
-    if( selectSend !=0 ){
-        let name = getNameFormat(document.getElementById('inputName').value);
-        document.getElementsByClassName('messageError')[0].style.display='none';
+    if( selectSend !=0 && nameInput.trim().length > 0){
+        let name = getNameFormat(nameInput);
         getCart().forEach(prod => {
             nodeProd += `-${prod.name}+${prod.quantity}%2C+color+${prod.color}.%0A%0A`
         });
         let redirectToWspp = `https://api.whatsapp.com/send?phone=+541170969187&text=`;
         let textWspp = `Hola+quiero+consultar+por+el+siguiente+pedido%3A%0A${nodeProd}Mi+nombre+es+${name}.%0AModo+de+compra%3A+${selectSend}.`
         window.open(`${redirectToWspp + textWspp}`, '_blank');
-        console.log(redirectToWspp + textWspp);
+        setCart([]);
+        window.location.href = "/index.html";
     }else{
-        document.getElementsByClassName('messageError')[0].style.display='block'
+
+        errorName.style.display=`${nameInput.trim().length == 0? 'block': 'none'}`
+        errorSelect.style.display=`${selectSend == 0? 'block': 'none'}`
+
+        // if(selectSend == 0){
+        //     document.getElementsByClassName('messageError')[1].style.display=`${selectSend == 0 ?'block': 'none'}`;
+        // }
+        // else{
+        //     document.getElementsByClassName('messageError')[1].style.display='none';
+        // }
+        // if(nameInput.trim().length == 0){
+        //     document.getElementsByClassName('messageError')[0].style.display='block';
+        // }
+        // else{
+        //     document.getElementsByClassName('messageError')[0].style.display='none';
+        // }
     }
 }
 

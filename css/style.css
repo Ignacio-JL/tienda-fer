@@ -8629,6 +8629,12 @@ body .bi-emoji-frown {
 
 body nav {
   background-color: #AC7D88; }
+  body nav a.iconCart {
+    position: absolute;
+    right: 80px; }
+  body nav i {
+    font-size: 1.8rem;
+    margin-bottom: 0.1rem; }
 
 body .main-container {
   background-color: #F8ECD1; }
