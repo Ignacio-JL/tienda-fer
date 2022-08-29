@@ -128,6 +128,7 @@ formDom.onsubmit = (e) =>{
     const selectSend = document.getElementById('selectEnvio').value;
     const nameInput = document.getElementById('inputName').value;
     let nodeProd = '';
+
     if( selectSend !=0 && nameInput.trim().length > 0){
         let name = getNameFormat(nameInput);
         getCart().forEach(prod => {
@@ -138,23 +139,10 @@ formDom.onsubmit = (e) =>{
         window.open(`${redirectToWspp + textWspp}`, '_blank');
         setCart([]);
         window.location.href = "/index.html";
-    }else{
-
+    }
+    else{
         errorName.style.display=`${nameInput.trim().length == 0? 'block': 'none'}`
         errorSelect.style.display=`${selectSend == 0? 'block': 'none'}`
-
-        // if(selectSend == 0){
-        //     document.getElementsByClassName('messageError')[1].style.display=`${selectSend == 0 ?'block': 'none'}`;
-        // }
-        // else{
-        //     document.getElementsByClassName('messageError')[1].style.display='none';
-        // }
-        // if(nameInput.trim().length == 0){
-        //     document.getElementsByClassName('messageError')[0].style.display='block';
-        // }
-        // else{
-        //     document.getElementsByClassName('messageError')[0].style.display='none';
-        // }
     }
 }
 

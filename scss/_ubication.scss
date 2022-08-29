@@ -1,0 +1,50 @@
+@import "variable";
+body{
+    .ubication-main{
+        margin-top: 56px;
+        background-color: $_colorMelange;
+        .ubication{
+            &-title{
+                display: flex;
+                flex-flow: row nowrap;
+                div{
+                    width: 100%;
+                    padding: .5rem;
+                }
+                &-option{
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-around;
+                    a{
+                        padding: 0.3rem;
+                        background: $_colorPurpleLight;
+                        padding: 0.3rem;
+                        font-size: 1.1rem;
+                        color: #fff;
+                        border-radius: 4px 20px 4px 20px;
+                    }
+                }
+            }
+            &-info{
+                &-fl,&-sl{
+                    margin-top: 1.5rem;
+                }
+                padding: 0 .5rem;
+                margin-top: 1rem;
+                letter-spacing: 1px;
+                h4{
+                    text-decoration: underline;
+                    text-align: center;
+                }
+                &-map{
+                    height: 40vh;
+                    margin: 0 -.5rem;
+                    iframe{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

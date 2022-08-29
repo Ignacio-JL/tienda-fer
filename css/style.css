@@ -9,6 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hammersmith+One&family=Inter:wght@400;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Quicksand:wght@300;400;500;600;700&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -8377,6 +8378,15 @@ textarea.form-control-lg {
   margin: 0;
   padding: 0; }
 
+body nav {
+  width: 100%;
+  position: fixed !important;
+  z-index: 999;
+  top: 0; }
+
+body .carousel {
+  margin-top: 56px; }
+
 body a {
   text-decoration: none;
   color: inherit; }
@@ -8552,6 +8562,7 @@ body .detail {
             color: red; }
 
 body .cart-main {
+  margin-top: 56px;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: #F8ECD1; }
@@ -8626,6 +8637,42 @@ body .message {
 
 body .bi-emoji-frown {
   font-size: 8em; }
+
+body .ubication-main {
+  margin-top: 56px;
+  background-color: #F8ECD1; }
+  body .ubication-main .ubication-title {
+    display: flex;
+    flex-flow: row nowrap; }
+    body .ubication-main .ubication-title div {
+      width: 100%;
+      padding: .5rem; }
+    body .ubication-main .ubication-title-option {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around; }
+      body .ubication-main .ubication-title-option a {
+        padding: 0.3rem;
+        background: #85586F;
+        padding: 0.3rem;
+        font-size: 1.1rem;
+        color: #fff;
+        border-radius: 4px 20px 4px 20px; }
+  body .ubication-main .ubication-info {
+    padding: 0 .5rem;
+    margin-top: 1rem;
+    letter-spacing: 1px; }
+    body .ubication-main .ubication-info-fl, body .ubication-main .ubication-info-sl {
+      margin-top: 1.5rem; }
+    body .ubication-main .ubication-info h4, body .ubication-main .ubication-info .h4 {
+      text-decoration: underline;
+      text-align: center; }
+    body .ubication-main .ubication-info-map {
+      height: 40vh;
+      margin: 0 -.5rem; }
+      body .ubication-main .ubication-info-map iframe {
+        width: 100%;
+        height: 100%; }
 
 body nav {
   background-color: #AC7D88; }
