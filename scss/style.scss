@@ -6,6 +6,7 @@
 @import "detail";
 @import "cart";
 @import "ubication";
+@import "category";
 
 body {
     nav {
@@ -26,6 +27,10 @@ body {
         background-color: $_colorMelange;
 
         .container-categorias {
+            h2{
+                margin-left: 1rem;
+                padding-top: 0.5rem;
+            }
             div {
                 justify-content: space-evenly;
                 width: 100%;

@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "color": ["Azul", "Rojo", "Negro"],
+        "color": ["Fucsia", "Blanco", "Negro"],
         "name": "Blazer",
         "stock": 15,
-        "price": 2500,
+        "price": 3000,
         "category": "Campera",
         "size":[1,2,3],
         "material": "Algodon",
-        "image": ["/assets/blazerexample.jpg", "/assets/blazerexample.jpg", "/assets/blazerexample.jpg"]
+        "image": ["/assets/blazer1.jpg", "/assets/blazer2.jpg", "/assets/blazer3.jpg"]
     },
     {
         "id": 2,

@@ -1,0 +1,31 @@
+@import "variable";
+body{
+    .category-main{
+        padding:56px 0;
+        background-color: #36252d;
+        .custom-card {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin:5rem 2rem 0rem 2rem;
+            background: $_colorRoseLight;
+            border-radius: 10%;
+            box-shadow: -11px 11px 9px $_colorRoseOld;
+
+            img {
+                border-radius: 1rem;
+                width: 220px;
+            }
+
+            a {
+                background: #85586F;
+                padding: 0.3rem 4rem;
+                font-size: 1.1rem;
+                color: #fff;
+                /* border-top-right-radius: 10px; */
+                border-radius: 4px 20px 4px 20px;
+            }
+        }
+    }
+}

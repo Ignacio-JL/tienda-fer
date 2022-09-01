@@ -1,4 +1,8 @@
-const getCart = () => {return JSON.parse(localStorage.getItem("cartFerAmy"))}
+const getCart = () => {
+    let cart = localStorage.getItem("cartFerAmy");
+    let response = cart? JSON.parse(cart) : [];
+    return response;
+}
 const setCart = (array) => {localStorage.setItem("cartFerAmy", JSON.stringify(array))}
 const cartDOM = document.getElementById("cart-content");
 const formDom = document.getElementById("formCart")
@@ -132,10 +136,10 @@ formDom.onsubmit = (e) =>{
     if( selectSend !=0 && nameInput.trim().length > 0){
         let name = getNameFormat(nameInput);
         getCart().forEach(prod => {
-            nodeProd += `-${prod.name}+${prod.quantity}%2C+color+${prod.color}.%0A%0A`
+            nodeProd += `-${prod.name}+${prod.quantity}+curvas%2C+color+${prod.color}.%0A%0A`
         });
         let redirectToWspp = `https://api.whatsapp.com/send?phone=+541170969187&text=`;
-        let textWspp = `Hola+quiero+consultar+por+el+siguiente+pedido%3A%0A${nodeProd}Mi+nombre+es+${name}.%0AModo+de+compra%3A+${selectSend}.`
+        let textWspp = `Hola+quiero+consultar+por+el+siguiente+pedido%3A%0A%0A${nodeProd}Mi+nombre+es+${name}.%0AModo+de+compra%3A+${selectSend}.`
         window.open(`${redirectToWspp + textWspp}`, '_blank');
         setCart([]);
         window.location.href = "/index.html";
