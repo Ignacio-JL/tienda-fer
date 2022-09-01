@@ -33,7 +33,7 @@ function viewCart(){
                             <div class="column"><h6>Curvas</h6></div>
                             <div class="column"><h6>Nombre</h6></div>
                             <div class="column"><h6>Color</h6></div>
-                            <div class="column"><h6>Precio x Curva</h6></div>
+                            
                             <div class="column"><h6>Subtotal</h6></div>
                             <div class="column"><h6></h6></div>
                         </div>`
@@ -42,7 +42,7 @@ function viewCart(){
                         <div class="column product-row"><p>${prod.quantity}</p></div>
                         <div class="column product-row"><p>${prod.name}</p></div>
                         <div class="column product-row"><p>${prod.color}</p></div>
-                        <div class="column product-row"><p>${prod.price * prod.size.length}</p></div>
+                        
                         <div class="column product-row"><p>${(prod.price * prod.size.length) * prod.quantity}</p></div>
                         <div class="column product-row"><button id="delete-${prod.id}"><i class="bi bi-trash-fill"></i></button></div>
                     </div>`

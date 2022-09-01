@@ -8580,7 +8580,7 @@ body .cart-main {
   background-color: #F8ECD1; }
   body .cart-main .cart-content-table .grid-row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2fr 1fr auto; }
+    grid-template-columns: 1fr 1fr 1fr 1fr auto; }
   body .cart-main .cart-content-table p {
     margin-bottom: 0;
     margin-left: 5px; }
