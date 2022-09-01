@@ -4,18 +4,39 @@
 @import "footer";
 @import "cards";
 @import "detail";
-body{
-    nav{
+@import "cart";
+@import "ubication";
+@import "category";
+
+body {
+    nav {
         background-color: $_colorRoseOld;
+
+        a.iconCart{
+            position: absolute;
+            right: 80px;
+        }
+        i {
+            
+            font-size: 1.8rem;
+            margin-bottom: 0.1rem;
+        }
     }
-    .main-container{
+
+    .main-container {
         background-color: $_colorMelange;
-        .container-categorias{  
-            div{
+
+        .container-categorias {
+            h2{
+                margin-left: 1rem;
+                padding-top: 0.5rem;
+            }
+            div {
                 justify-content: space-evenly;
                 width: 100%;
             }
-            .category{
+
+            .category {
                 font-family: $_fontTitleSecond;
                 display: flex;
                 justify-content: center;
@@ -26,17 +47,19 @@ body{
                 margin: 0.5rem;
                 color: #FFF;
                 background: radial-gradient(circle, #AC7D88 0%, #85586F 100%);
-                h4{
+
+                h4 {
                     width: 100%;
                 }
             }
-            .category:hover{
+
+            .category:hover {
                 background: radial-gradient(circle, #581e57 0%, #580831 100%);
             }
         }
     }
-    
-    .icon-wspp{
+
+    .icon-wspp {
         position: fixed;
         display: flex;
         right: 20px;
@@ -48,7 +71,8 @@ body{
         padding: 10px;
         z-index: 999;
     }
-    footer{
+
+    footer {
         background-color: $_colorPurpleLight;
     }
 }
