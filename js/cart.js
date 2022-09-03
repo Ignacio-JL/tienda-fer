@@ -56,7 +56,10 @@ function viewCart(){
                         <button id="clearCart">Vaciar carrito<i class="bi bi-trash-fill"></i></button>
                         <a href="/index.html">Volver a ver productos</a>
                     </div>
-                    <div class="totalCart"><h5>Total ${priceConvertToArs(getTotalPrice())}</h5></div>
+                    <div class="totalCart">
+                        <h5>Total ${priceConvertToArs(getTotalPrice())}</h5>
+                        <p class="messageError"><i class="bi bi-exclamation-circle-fill"></i>Compra minima $18.000</p>
+                    </div>
                     </div>
                     `
 
@@ -127,13 +130,14 @@ Hola+quiero+consultar+por+el+siguiente+pedido%3A%0A
 // SendCart
 formDom.onsubmit = (e) =>{
     e.preventDefault();
-    const errorName = document.getElementsByClassName('messageError')[0];
-    const errorSelect = document.getElementsByClassName('messageError')[1];
+    const errorPrice = document.getElementsByClassName('messageError')[0];
+    const errorName = document.getElementsByClassName('messageError')[1];
+    const errorSelect = document.getElementsByClassName('messageError')[2];
     const selectSend = document.getElementById('selectEnvio').value;
     const nameInput = document.getElementById('inputName').value;
     let nodeProd = '';
 
-    if( selectSend !=0 && nameInput.trim().length > 0){
+    if( selectSend !=0 && nameInput.trim().length > 0 && getTotalPrice() >= 18000){
         let name = getNameFormat(nameInput);
         getCart().forEach(prod => {
             nodeProd += `-${prod.name}+${prod.quantity}+curvas%2C+color+${prod.color}.%0A%0A`
@@ -147,6 +151,7 @@ formDom.onsubmit = (e) =>{
     else{
         errorName.style.display=`${nameInput.trim().length == 0? 'block': 'none'}`
         errorSelect.style.display=`${selectSend == 0? 'block': 'none'}`
+        errorPrice.style.display=`${getTotalPrice() < 18000? 'block': 'none'}`
     }
 }
 

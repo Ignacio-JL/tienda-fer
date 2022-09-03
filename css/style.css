@@ -8469,8 +8469,7 @@ body .swiper .custom-card {
 body .swiper .swiper-button-next:after,
 body .swiper .swiper-button-prev:after {
   color: #85586F;
-  font-size: 2.5rem;
-  margin-right: 1rem; }
+  font-size: 2.5rem; }
 
 body .detail {
   display: grid;
@@ -8488,22 +8487,16 @@ body .detail {
     text-align: center;
     grid-area: image; }
     body .detail-image img {
-      width: 94%;
-      height: 576px; }
+      height: 405px; }
   body .detail-images {
     grid-area: images;
+    text-align: center;
+    width: 100vw;
     margin-top: 0.5rem; }
-    body .detail-images-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-left: 3%;
-      margin-right: 3%; }
-      body .detail-images-container img {
-        border-radius: 5px;
-        width: 32%; }
-      body .detail-images-container img#selection-img0 {
-        border: 4px solid #85586F; }
+    body .detail-images img {
+      height: 125px; }
+    body .detail-images img#selection-img0 {
+      border: 4px solid #85586F; }
   body .detail-info {
     margin: 0.5rem 1rem;
     grid-area: info;
@@ -8600,6 +8593,7 @@ body .cart-main {
     body .cart-main .cart-content-footer .totalCart {
       display: flex;
       justify-content: flex-end;
+      flex-flow: column nowrap;
       align-items: center; }
       body .cart-main .cart-content-footer .totalCart h5, body .cart-main .cart-content-footer .totalCart .h5 {
         margin: 0;
@@ -8615,13 +8609,6 @@ body .cart-main {
       body .cart-main form div input,
       body .cart-main form div select {
         width: 60%; }
-      body .cart-main form div p.messageError {
-        display: none;
-        color: red;
-        text-decoration: underline; }
-        body .cart-main form div p.messageError i {
-          margin-right: 0.2rem;
-          color: red; }
     body .cart-main form button {
       padding: 0.3rem;
       background: #85586F;
@@ -8649,6 +8636,16 @@ body .message {
 
 body .bi-emoji-frown {
   font-size: 8em; }
+
+body p.messageError {
+  display: none;
+  font-weight: 500;
+  text-align: center;
+  color: red;
+  text-decoration: underline; }
+  body p.messageError i {
+    margin-right: 0.2rem;
+    color: red; }
 
 body .ubication-main {
   margin-top: 56px;
