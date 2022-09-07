@@ -122,6 +122,13 @@ body {
                 flex-direction: row;
                 width: 100%;
                 align-items: center;
+                &-size{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    button{
+                        font-size: 1.1rem;
+                    }
+                }
                 div{
                     width: 50%;
                     span{
@@ -152,5 +159,21 @@ body {
         margin-top: 5px;
         color: #85586F;
         font-weight: 500;
+    }
+    #table-size{
+        .modal-size-header{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: .5rem;
+            h6{
+                align-self: center;
+                margin: 0;
+                height: 1rem;
+            }
+            hr{
+                margin-top: 1.5rem;
+            }
+        }
+        
     }
 }

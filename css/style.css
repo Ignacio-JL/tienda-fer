@@ -8542,6 +8542,11 @@ body .detail {
       flex-direction: row;
       width: 100%;
       align-items: center; }
+      body .detail-info-select-size {
+        display: flex;
+        flex-flow: column nowrap; }
+        body .detail-info-select-size button {
+          font-size: 1.1rem; }
       body .detail-info-select div {
         width: 50%; }
         body .detail-info-select div span {
@@ -8565,6 +8570,17 @@ body .viewInMap {
   margin-top: 5px;
   color: #85586F;
   font-weight: 500; }
+
+body #table-size .modal-size-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: .5rem; }
+  body #table-size .modal-size-header h6, body #table-size .modal-size-header .h6 {
+    align-self: center;
+    margin: 0;
+    height: 1rem; }
+  body #table-size .modal-size-header hr {
+    margin-top: 1.5rem; }
 
 body .cart-main {
   margin-top: 56px;

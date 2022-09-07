@@ -27,6 +27,9 @@ let detailHeader = document.getElementsByClassName('detail-header')[0];
 let detailImage = document.getElementsByClassName('detail-image')[0];
 let swiperDetailImages = document.getElementById('swiper-detail');
 let detailInfo  = document.getElementsByClassName('detail-info')[0];
+let table = document.getElementById('table-size');
+
+
 
 const setProduct = (array) => {
     let paramaterId = new URLSearchParams(window.location.search);
@@ -36,6 +39,12 @@ const setProduct = (array) => {
 const pShowDetail = new Promise((resolve) => {
     setTimeout(() => {
         resolve(showDetail());
+    }, 500);
+});
+
+const pShowTable = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve(showTable());
     }, 500);
 });
 
@@ -76,7 +85,7 @@ function showDetail() {
 
     swiperDetailImages.innerHTML=`${nodoImages}`
 
-    detailInfo.innerHTML=`<div class="detail-info">
+    detailInfo.innerHTML=`
                             <div class="detail-info-price">
                                 <h3>${priceConvertToArs(product.price)}</h3>
                             </div>
@@ -87,17 +96,16 @@ function showDetail() {
                                 <p>Talles: ${nodoTalles}</p>
                             </div>
                             <div class="detail-info-select">
-                                <div>
-                                    <select id="selectColor" class="form-select" aria-label="Default select example">
-                                        ${nodoColor}
-                                    </select>
-                                    <p class="messageError"><i class="bi bi-exclamation-circle-fill"></i>Selecciona una opción</p>
-                                </div>
+
                                 <div class="text-center">
                                     <span>Curvas</span>
                                     <button id="discountCount">-</button>
                                     <span id="count">${count}</span>
                                     <button id="addCount">+</button>
+                                </div>
+                                <div class="detail-info-select-size">
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modal-talles">Seleccione colores<button>
+                                    <p class="messageError"><i class="bi bi-exclamation-circle-fill"></i>Selecciona una opción</p>
                                 </div>
                             </div>
                             <div class="detail-info-stock">
@@ -115,7 +123,7 @@ function showDetail() {
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#modal-send"><i class="bi bi-truck"></i></button>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#modal-pay"><i class="bi bi-currency-dollar"></i></button>
                             </div>
-                        </div>`
+                        `
 
     product.image.forEach((img, i) => {
         document.getElementById(`selection-img${i}`).onclick = () => {
@@ -144,9 +152,12 @@ function showDetail() {
         };
     })
 
+    
+
     document.getElementById("addCount").onclick = () => {
         count = count + 1
         document.getElementById("count").innerHTML = count;
+        showTable()
     };
 
     document.getElementById("discountCount").onclick = () => {
@@ -154,6 +165,7 @@ function showDetail() {
             count = count - 1
             document.getElementById("count").innerHTML = count;
         }
+        showTable()
     };
 
     document.getElementById("buy").onclick = () => {
@@ -190,6 +202,84 @@ function showDetail() {
 
     }
 
+}
+
+function showTable(){
+    let nodo='';
+    for (let i = 1; i <= count; i++) {
+        nodo += `
+        <tr>
+            <td colspan="4">
+                <div class="modal-size-header">
+                    <h6 class="text-center">Curva ${i}</h6>
+                    <div>
+                        <span>Seleccionar todos</span>
+                        <select name="c${i}ta" id="c${i}ta">
+                            <option value="0" selected>Surtido</option>
+                            <option value="Azul">Azul</option>
+                            <option value="Rojo">Rojo</option>
+                            <option value="Negro">Negro</option>
+                            <option value="Blanco">Blanco</option>
+                        </select>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>T1</th>
+            <th>T2</th>
+            <th>T3</th>
+            <th>T4</th>
+            <th>T5</th>
+        </tr>
+        <tr>
+            <td>
+                <select name="c${i}t1" id="c${i}t1">
+                    <option value="Azul">Azul</option>
+                    <option value="Rojo">Rojo</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Blanco">Blanco</option>
+                </select>
+            </td>
+            <td>
+                <select name="c${i}t2" id="c${i}t2">
+                    <option value="Azul">Azul</option>
+                    <option value="Rojo">Rojo</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Blanco">Blanco</option>
+                </select>
+            </td>
+            <td>
+                <select name="c${i}t3" id="c${i}t3">
+                    <option value="Azul">Azul</option>
+                    <option value="Rojo">Rojo</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Blanco">Blanco</option>
+                </select>
+            </td>
+            <td>
+                <select name="c${i}t4" id="c${i}t4">
+                    <option value="Azul">Azul</option>
+                    <option value="Rojo">Rojo</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Blanco">Blanco</option>
+                </select>
+            </td>
+            <td>
+                <select name="c${i}t5" id="c${i}t5">
+                    <option value="Azul">Azul</option>
+                    <option value="Rojo">Rojo</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Blanco">Blanco</option>
+                </select>
+            </td>
+        </tr>
+        <tr><td colspan="5"><hr></td></tr>
+        `
+        
+    }
+    table.innerHTML = nodo;
 }
 
 function priceConvertToArs(value) {
