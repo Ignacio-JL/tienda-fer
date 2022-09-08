@@ -6,7 +6,7 @@
         "stock": 15,
         "price": 3000,
         "category": "Campera",
-        "size":[1,2,3],
+        "size":[1,2,3,4,5],
         "material": "Algodon",
         "image": ["/assets/blazer1.jpg", "/assets/blazer2.jpg", "/assets/blazer3.jpg"]
     },

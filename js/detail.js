@@ -65,18 +65,17 @@ function showDetail() {
 
     });
 
-    let nodoTalles = ''
-    for (let i = 1; i < product.size.length; i++) {
-        nodoTalles += `${i} | `
-    }
-    nodoTalles += `${product.size.length}`
-
-    let nodoColor = `<option value="0"selected>Seleccione un color</option>
-                    <option value="Surtido">Surtido</option>`;
-    product.color.forEach(c => {
-        nodoColor += `<option value="${c}">${c}</option>`
+    let nodoTalles = '';
+    product.size.forEach(size => {
+        nodoTalles += `${size} | `
     });
-    nodoColor += `<option value="Personalizado">Lo aclaro con el vendedor</option>`
+
+    // let nodoColor = `<option value="0"selected>Seleccione un color</option>
+    //                 <option value="Surtido">Surtido</option>`;
+    // product.color.forEach(c => {
+    //     nodoColor += `<option value="${c}">${c}</option>`
+    // });
+    // nodoColor += `<option value="Personalizado">Lo aclaro con el vendedor</option>`
 
     detailHeader.innerHTML=`<h2>${product.name}</h2>
                             <h5>${product.category}</h5>`;
@@ -170,8 +169,9 @@ function showDetail() {
 
     document.getElementById("buy").onclick = () => {
         let storage = cartStorage ? JSON.parse(cartStorage) : [];
-        let colorSelected = document.getElementById("selectColor").value;
-        if (colorSelected != 0) {
+        // let colorSelected = document.getElementById("selectColor").value;
+        
+        // aca iria la validacion por color seleccionado
             document.getElementsByClassName('messageError')[0].style.display = 'none'
             let count = parseInt(document.getElementById("count").textContent);
             const isInCart = storage.find((p) => p.id == product.id);
@@ -187,7 +187,8 @@ function showDetail() {
                 })
                 addCartStorage(newArray);
             } else {
-                let productToSave = new Product(product.id, product.name, colorSelected, product.stock, product.price, product.category, product.size, product.material, product.image, count);
+                // let objetColor={};
+                let productToSave = new Product(product.id, product.name, getColorsBought(), product.stock, product.price, product.category, product.size, product.material, product.image, count);
                 storage.push(productToSave);
                 addCartStorage(storage);
             }
@@ -195,10 +196,7 @@ function showDetail() {
             //agrega un producto por cada recarga de pagina
             document.getElementsByClassName("detail-info-comprado")[0].style.display = "block";
             document.getElementsByClassName("detail-info-comprar")[0].style.display = "none";
-        }
-        else {
-            document.getElementsByClassName('messageError')[0].style.display = 'block'
-        }
+        
 
     }
 
@@ -206,88 +204,97 @@ function showDetail() {
 
 function showTable(){
     let nodo='';
+    let optionColors = ''
+    product.color.forEach(color => {
+        optionColors += `<option value="${color}">${color}</option>`;
+    });
+
     for (let i = 1; i <= count; i++) {
+        let nodoAuxSize='';
+        let nodoAuxSelect='';
+        
+
+        product.size.forEach(size => {
+            nodoAuxSize += `<th>T${size}</th>`;
+            nodoAuxSelect += `
+            <td>
+                <select name="c${i}t${size}" id="c${i}t${size}">
+                    ${optionColors}
+                </select>
+            </td>
+            `
+        });
+        
         nodo += `
         <tr>
             <td colspan="4">
                 <div class="modal-size-header">
                     <h6 class="text-center">Curva ${i}</h6>
                     <div>
-                        <span>Seleccionar todos</span>
-                        <select name="c${i}ta" id="c${i}ta">
-                            <option value="0" selected>Surtido</option>
-                            <option value="Azul">Azul</option>
-                            <option value="Rojo">Rojo</option>
-                            <option value="Negro">Negro</option>
-                            <option value="Blanco">Blanco</option>
+                        <div class="modal-size-modes">
+                            <span class="selectMode1" id="btnSelectCustom${i}">Por talle</span>
+                            <span class="selectMode2" id="btnSelectAll${i}">Todos</span>
+                        </div>
+                        <select class="selectNone" name="c${i}ta" id="c${i}ta">
+                            <option value="0" selected>Colores surtido</option>
+                            ${optionColors}
                         </select>
                     </div>
                 </div>
             </td>
         </tr>
 
-        <tr>
-            <th>T1</th>
-            <th>T2</th>
-            <th>T3</th>
-            <th>T4</th>
-            <th>T5</th>
-        </tr>
-        <tr>
-            <td>
-                <select name="c${i}t1" id="c${i}t1">
-                    <option value="Azul">Azul</option>
-                    <option value="Rojo">Rojo</option>
-                    <option value="Negro">Negro</option>
-                    <option value="Blanco">Blanco</option>
-                </select>
-            </td>
-            <td>
-                <select name="c${i}t2" id="c${i}t2">
-                    <option value="Azul">Azul</option>
-                    <option value="Rojo">Rojo</option>
-                    <option value="Negro">Negro</option>
-                    <option value="Blanco">Blanco</option>
-                </select>
-            </td>
-            <td>
-                <select name="c${i}t3" id="c${i}t3">
-                    <option value="Azul">Azul</option>
-                    <option value="Rojo">Rojo</option>
-                    <option value="Negro">Negro</option>
-                    <option value="Blanco">Blanco</option>
-                </select>
-            </td>
-            <td>
-                <select name="c${i}t4" id="c${i}t4">
-                    <option value="Azul">Azul</option>
-                    <option value="Rojo">Rojo</option>
-                    <option value="Negro">Negro</option>
-                    <option value="Blanco">Blanco</option>
-                </select>
-            </td>
-            <td>
-                <select name="c${i}t5" id="c${i}t5">
-                    <option value="Azul">Azul</option>
-                    <option value="Rojo">Rojo</option>
-                    <option value="Negro">Negro</option>
-                    <option value="Blanco">Blanco</option>
-                </select>
-            </td>
-        </tr>
-        <tr><td colspan="5"><hr></td></tr>
+        
         `
         
+        nodo+= `<tr class="selectNone" id="trCurva${i}header">
+                    ${nodoAuxSize}
+                </tr>
+                <tr class="selectNone" id="trCurva${i}select">
+                    ${nodoAuxSelect}
+                </tr>
+                <tr><td colspan="5"><hr></td></tr>`;
     }
+        
     table.innerHTML = nodo;
-}
 
+    for (let i = 1; i <= count; i++) {
+        document.getElementById(`btnSelectAll${i}`).onclick=()=>{
+            document.getElementById(`trCurva${i}header`).style.display= `none`;
+            document.getElementById(`trCurva${i}select`).style.display= `none`;
+            document.getElementById(`c${i}ta`).style.display= `block`;
+        }
+        document.getElementById(`btnSelectCustom${i}`).onclick=()=>{
+            document.getElementById(`trCurva${i}header`).style.display= `table-row`;
+            document.getElementById(`trCurva${i}select`).style.display= `table-row`;
+            document.getElementById(`c${i}ta`).style.display= `none`;
+        }
+    }
+
+}
 function priceConvertToArs(value) {
     return value.toLocaleString('es-ar', {
         style: 'currency',
         currency: 'ARS',
         minimumFractionDigits: 0
     });
+}
+
+function getColorsBought(){
+    let buyed=[];
+    for (let i = 1; i <= count; i++) {
+        let object={};
+        object.curva=count;
+        object.select=[];
+        object.selectAll=document.getElementById(`c${i}ta`).value;
+
+        product.size.forEach(s => {
+            object.select.push(document.getElementById(`c${i}t${s}`).value);
+        });
+        
+        buyed.push(object);
+    }
+    return buyed;
 }
 
 let btnAdd = document.getElementById("addCount");
