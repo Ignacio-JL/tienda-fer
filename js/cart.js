@@ -32,7 +32,6 @@ function viewCart(){
                         <div class="cart-content-title grid-row">
                             <div class="column"><h6>Curvas</h6></div>
                             <div class="column"><h6>Nombre</h6></div>
-                            <div class="column"><h6>Color</h6></div>
                             
                             <div class="column"><h6>Subtotal</h6></div>
                             <div class="column"><h6></h6></div>
@@ -41,7 +40,6 @@ function viewCart(){
             nodo += `<div class="grid-row">
                         <div class="column product-row"><p>${prod.quantity}</p></div>
                         <div class="column product-row"><p>${prod.name}</p></div>
-                        <div class="column product-row"><p>${prod.color}</p></div>
                         
                         <div class="column product-row"><p>${(prod.price * prod.size.length) * prod.quantity}</p></div>
                         <div class="column product-row"><button id="delete-${prod.id}"><i class="bi bi-trash-fill"></i></button></div>
@@ -143,7 +141,7 @@ formDom.onsubmit = (e) =>{
             nodeProd += `-${prod.name}+${prod.quantity}+curvas%2C+color+${prod.color}.%0A%0A`
         });
         let redirectToWspp = `https://api.whatsapp.com/send?phone=+541170969187&text=`;
-        let textWspp = `Hola+quiero+consultar+por+el+siguiente+pedido%3A%0A%0A${nodeProd}Mi+nombre+es+${name}.%0AModo+de+compra%3A+${selectSend}.`
+        let textWspp = `Hola+mi+nombre+es+${name}.%0AQuiero+consultar+por+el+siguiente+pedido%3A%0A%0A${nodeProd}Modo+de+compra%3A+${selectSend}.`
         window.open(`${redirectToWspp + textWspp}`, '_blank');
         setCart([]);
         window.location.href = "/index.html";

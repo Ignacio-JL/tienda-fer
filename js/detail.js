@@ -70,13 +70,6 @@ function showDetail() {
         nodoTalles += `${size} | `
     });
 
-    // let nodoColor = `<option value="0"selected>Seleccione un color</option>
-    //                 <option value="Surtido">Surtido</option>`;
-    // product.color.forEach(c => {
-    //     nodoColor += `<option value="${c}">${c}</option>`
-    // });
-    // nodoColor += `<option value="Personalizado">Lo aclaro con el vendedor</option>`
-
     detailHeader.innerHTML=`<h2>${product.name}</h2>
                             <h5>${product.category}</h5>`;
 
@@ -178,8 +171,9 @@ function showDetail() {
             if (isInCart) {
 
                 const newArray = storage.map((p) => {
+                    
                     if (p.id == isInCart.id) {
-                        return { ...p, quantity: p.quantity + count }
+                        return { ...p, quantity: p.quantity + count , color: p.color.concat(getColorsBought())}
                     }
                     else {
                         return p;
@@ -187,7 +181,6 @@ function showDetail() {
                 })
                 addCartStorage(newArray);
             } else {
-                // let objetColor={};
                 let productToSave = new Product(product.id, product.name, getColorsBought(), product.stock, product.price, product.category, product.size, product.material, product.image, count);
                 storage.push(productToSave);
                 addCartStorage(storage);
@@ -196,17 +189,15 @@ function showDetail() {
             //agrega un producto por cada recarga de pagina
             document.getElementsByClassName("detail-info-comprado")[0].style.display = "block";
             document.getElementsByClassName("detail-info-comprar")[0].style.display = "none";
-        
-
     }
 
 }
 
 function showTable(){
     let nodo='';
-    let optionColors = ''
+    let optionColors = '<option value="0">Elegir</option>'
     product.color.forEach(color => {
-        optionColors += `<option value="${color}">${color}</option>`;
+        optionColors += `<option ${!color.stock && 'disabled'} value="${color.name}">${color.name}</option>`;
     });
 
     for (let i = 1; i <= count; i++) {
@@ -284,7 +275,7 @@ function getColorsBought(){
     let buyed=[];
     for (let i = 1; i <= count; i++) {
         let object={};
-        object.curva=count;
+        // object.curva=count;
         object.select=[];
         object.selectAll=document.getElementById(`c${i}ta`).value;
 
