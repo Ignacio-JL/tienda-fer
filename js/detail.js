@@ -16,6 +16,7 @@ class Product {
 
 let product = {};
 let count = 1;
+
 const cartStorage = localStorage.getItem("cartFerAmy");
 
 function addCartStorage(array) {
@@ -195,7 +196,7 @@ function showDetail() {
 
 function showTable(){
     let nodo='';
-    let optionColors = '<option value="0">Elegir</option>'
+    let optionColors = ''
     product.color.forEach(color => {
         optionColors += `<option ${!color.stock && 'disabled'} value="${color.name}">${color.name}</option>`;
     });
@@ -210,6 +211,7 @@ function showTable(){
             nodoAuxSelect += `
             <td>
                 <select name="c${i}t${size}" id="c${i}t${size}">
+                    <option value="0" selected>Elegir</option>
                     ${optionColors}
                 </select>
             </td>
@@ -226,8 +228,10 @@ function showTable(){
                             <span class="selectMode1" id="btnSelectCustom${i}">Por talle</span>
                             <span class="selectMode2" id="btnSelectAll${i}">Todos</span>
                         </div>
+                        <input type="hidden" value="true" id="selectAll${i}">
+                        <input type="hidden" value="false" id="selectCustom${i}">
                         <select class="selectNone" name="c${i}ta" id="c${i}ta">
-                            <option value="0" selected>Colores surtido</option>
+                            <option value="Surtido" selected>Colores surtido</option>
                             ${optionColors}
                         </select>
                     </div>
@@ -251,11 +255,17 @@ function showTable(){
 
     for (let i = 1; i <= count; i++) {
         document.getElementById(`btnSelectAll${i}`).onclick=()=>{
+            document.getElementById(`selectAll${i}`).value = true;
+            document.getElementById(`selectCustom${i}`).value = false;
+
             document.getElementById(`trCurva${i}header`).style.display= `none`;
             document.getElementById(`trCurva${i}select`).style.display= `none`;
             document.getElementById(`c${i}ta`).style.display= `block`;
         }
         document.getElementById(`btnSelectCustom${i}`).onclick=()=>{
+            document.getElementById(`selectCustom${i}`).value = true;
+            document.getElementById(`selectAll${i}`).value = false;
+            
             document.getElementById(`trCurva${i}header`).style.display= `table-row`;
             document.getElementById(`trCurva${i}select`).style.display= `table-row`;
             document.getElementById(`c${i}ta`).style.display= `none`;
@@ -279,10 +289,13 @@ function getColorsBought(){
         object.select=[];
         object.selectAll=document.getElementById(`c${i}ta`).value;
 
+        object.selectActived = JSON.parse(document.getElementById(`selectCustom${i}`).value);
+        object.selectAllActived = JSON.parse(document.getElementById(`selectAll${i}`).value);
+
         product.size.forEach(s => {
-            object.select.push(document.getElementById(`c${i}t${s}`).value);
+            object.select.push({"size": s, "color": document.getElementById(`c${i}t${s}`).value});
         });
-        
+        console.log(object);
         buyed.push(object);
     }
     return buyed;

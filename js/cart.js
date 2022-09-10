@@ -113,16 +113,18 @@ if(getCart().length !=0){
 }
 
 /*
-Salto linea %0A
-Dos puntos(:) %3A
-Coma (,) %2C
-Espacio +
 
 https://api.whatsapp.com/send?phone=+541170969187&text=
 Hola+quiero+consultar+por+el+siguiente+pedido%3A%0A
 -Blazer+5+curvas%2C+color+negro+y+azul.%0A%0A
 -Pollera+3+curvas%2C+color+surtido.%0A%0AMi+nombre+es+Ana+Banana+y+mi+pedido+es+para+Envio
 
+Salto linea %0A
+Dos puntos(:) %3A
+Coma (,) %2C
+Espacio +
+asterisco * %2A
+barra / %2F
 */
 
 // SendCart
@@ -138,7 +140,23 @@ formDom.onsubmit = (e) =>{
     if( selectSend !=0 && nameInput.trim().length > 0 && getTotalPrice() >= 18000){
         let name = getNameFormat(nameInput);
         getCart().forEach(prod => {
-            nodeProd += `-${prod.name}+${prod.quantity}+curvas%2C+color+${prod.color}.%0A%0A`
+            let count = 1;
+            nodeProd += `•${prod.name}+${prod.quantity}+curva%2Fs.%0A`;
+            // cada obj seria una curva del producto
+            prod.color.forEach( obj =>{
+                if(obj.selectAllActived){
+                    nodeProd+=`--Curva+${count}%3A+Color+${obj.selectAll}%0A`;
+                }
+                else if(obj.selectActived){
+                    nodeProd+=`--Curva+${count}%3A%0A`
+                    obj.select.forEach(element => {
+                        nodeProd+=`-->T${element.size}%3A+${element.color == 0? 'Sin elegir': element.color }%0A`
+                    });
+                }
+                count++;
+            })
+            nodeProd+='%0A'
+            count = 1;
         });
         let redirectToWspp = `https://api.whatsapp.com/send?phone=+541170969187&text=`;
         let textWspp = `Hola+mi+nombre+es+${name}.%0AQuiero+consultar+por+el+siguiente+pedido%3A%0A%0A${nodeProd}Modo+de+compra%3A+${selectSend}.`
