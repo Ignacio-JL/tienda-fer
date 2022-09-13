@@ -56,7 +56,9 @@ function viewCart(){
                     </div>
                     <div class="totalCart">
                         <h5>Total ${priceConvertToArs(getTotalPrice())}</h5>
-                        <p class="messageError"><i class="bi bi-exclamation-circle-fill"></i>Compra minima $18.000</p>
+                        ${getTotalPrice() < 18000 ? '<p class="messageError errorTotalPrice"><i class="bi bi-exclamation-circle-fill"></i>Compra minima $18.000</p>' 
+                        :
+                        ''}
                     </div>
                     </div>
                     `
@@ -130,7 +132,6 @@ barra / %2F
 // SendCart
 formDom.onsubmit = (e) =>{
     e.preventDefault();
-    const errorPrice = document.getElementsByClassName('messageError')[0];
     const errorName = document.getElementsByClassName('messageError')[1];
     const errorSelect = document.getElementsByClassName('messageError')[2];
     const selectSend = document.getElementById('selectEnvio').value;
@@ -167,7 +168,6 @@ formDom.onsubmit = (e) =>{
     else{
         errorName.style.display=`${nameInput.trim().length == 0? 'block': 'none'}`
         errorSelect.style.display=`${selectSend == 0? 'block': 'none'}`
-        errorPrice.style.display=`${getTotalPrice() < 18000? 'block': 'none'}`
     }
 }
 

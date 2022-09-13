@@ -8691,6 +8691,9 @@ body p.messageError {
     margin-right: 0.2rem;
     color: red; }
 
+body p.errorTotalPrice {
+  display: block; }
+
 body .ubication-main {
   margin-top: 56px;
   background-color: #F8ECD1; }
@@ -8758,6 +8761,13 @@ body nav {
   body nav i {
     font-size: 1.8rem;
     margin-bottom: 0.1rem; }
+  body nav a.linklogo {
+    margin: 0;
+    padding: 0; }
+    body nav a.linklogo img {
+      height: 40px;
+      border-radius: 100%;
+      margin-right: 1rem; }
 
 body .main-container {
   background-color: #F8ECD1; }

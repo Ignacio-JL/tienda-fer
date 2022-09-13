@@ -117,35 +117,18 @@ function showDetail() {
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#modal-pay"><i class="bi bi-currency-dollar"></i></button>
                             </div>
                         `
-
-    product.image.forEach((img, i) => {
+// funcionalidad images
+    for (let i = 0; i < product.image.length; i++) {
         document.getElementById(`selection-img${i}`).onclick = () => {
-            if (i == 0) {
-                document.getElementById('selection-img0').style.border = '4px solid #85586F'
-                document.getElementById('selection-img1').style.border = 'none'
-                if (product.image.length == 3) {
-                    document.getElementById('selection-img2').style.border = 'none'
+            document.getElementById(`selection-img${i}`).style.border = '4px solid #85586F'
+            document.getElementById('image-main').src = `${product.image[i]}`
+            for (let j = 0; j < product.image.length; j++) {
+                if(j!=i){
+                    document.getElementById(`selection-img${j}`).style.border = 'none'
                 }
-                document.getElementById('image-main').src = `${product.image[0]}`
             }
-            if (i == 1) {
-                document.getElementById('selection-img1').style.border = '4px solid #85586F'
-                document.getElementById('selection-img0').style.border = 'none'
-                if (product.image.length == 3) {
-                    document.getElementById('selection-img2').style.border = 'none'
-                }
-                document.getElementById('image-main').src = `${product.image[1]}`
-            }
-            if (product.image.length == 3 && i == 2) {
-                document.getElementById('selection-img2').style.border = '4px solid #85586F'
-                document.getElementById('selection-img0').style.border = 'none'
-                document.getElementById('selection-img1').style.border = 'none'
-                document.getElementById('image-main').src = `${product.image[2]}`
-            }
-        };
-    })
-
-    
+        }
+    }
 
     document.getElementById("addCount").onclick = () => {
         count = count + 1
