@@ -128,3 +128,15 @@ body {
         display: block;
     }
 }
+@media (min-width: 768px){
+    body{
+        .cart-main{
+            margin-top: 75px;
+        }
+        .column {
+            &:last-child {
+                width: 2rem;
+            }
+        }
+    }
+}

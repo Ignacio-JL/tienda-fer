@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/logocircle.png">
     <title>Detail</title>
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
@@ -21,6 +22,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
+            <a class="linklogo" href="/index.html"><img src="/assets/logocircle.png"/></a>
             <a class="navbar-brand" href="/index.html">Amy | Fer</a>
             <a class="iconCart" href="/pages/cart.html"><i class="bi bi-cart-fill"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -35,9 +37,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/pages/ubication.html">Ubicanos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pages/Contact.html">Contacto</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -46,8 +45,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/pages/category.html?category=Campera">Camperas</a></li>
                             <li><a class="dropdown-item" href="/pages/category.html?category=Pollera">Polleras</a></li>
-                            <li><a class="dropdown-item" href="/pages/category.html?category=Conjunto">Conjuntos</a>
-                            </li>
+                            <li><a class="dropdown-item" href="/pages/category.html?category=Conjunto">Conjuntos</a></li>
                             <li><a class="dropdown-item" href="/pages/category.html?category=Remera">Remeras</a></li>
                         </ul>
                     </li>
@@ -59,6 +57,23 @@
 
 
     <!-- Detail Container -->
+    <div id="detail-desktop">
+        
+        <div class="swiper mySwiper2">
+
+            <div class="swiper-wrapper" id="swiper-detail-desktop">
+
+            </div>
+            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+                aria-controls="swiper-wrapper-f55e8b9a8b2d1432" aria-disabled="false"><i class="bi bi-arrow-down"></i></div>
+            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"
+                aria-controls="swiper-wrapper-f55e8b9a8b2d1432" aria-disabled="false"> <i class="bi bi-arrow-up"></i></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div id="container-image-main-desktop">
+            
+        </div>
+    </div>
     <div class="detail" id="detail">
         <div class="detail-header"></div>
 
@@ -87,6 +102,21 @@
 
 
     <!-- Modals -->
+
+        <!-- Modal Imagen principal -->
+        <div class="modal fade" id="modal-imagen-main" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modal-imagen">
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
 
     <!-- Modal Talles -->
     <div class="modal fade" id="modal-talles" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -121,11 +151,11 @@
                 </div>
                 <div class="modal-body">
                     <p>El precio por curva se refiere a la compra de todos los talles de un producto</p>
-                    <p>Por ejemplo este producto cuenta con 3 talles por lo tanto una curva seria llevar:</p>
+                    <p>Por ejemplo en un producto que tenga 3 talles, una curva seria llevar:</p>
                     <ul>
-                        <li>Este articulo en talle 1</li>
-                        <li>Este articulo en talle 2</li>
-                        <li>Este articulo en talle 3</li>
+                        <li>El producto en talle 1</li>
+                        <li>El producto en talle 2</li>
+                        <li>El producto en talle 3</li>
                     </ul>
                 </div>
             </div>
@@ -210,7 +240,7 @@
         <div class="footer-redes">
             <h4>Seguinos</h4>
             <div class="footer-redes-link">
-                <a href="#"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://wa.link/npgger"><i class="bi bi-whatsapp"></i></a>
                 <a href="#"><i class="bi bi-facebook"></i></a>
                 <a href="#"><i class="bi bi-instagram"></i></a>
             </div>

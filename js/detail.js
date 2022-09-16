@@ -29,6 +29,7 @@ let detailImage = document.getElementsByClassName('detail-image')[0];
 let swiperDetailImages = document.getElementById('swiper-detail');
 let detailInfo  = document.getElementsByClassName('detail-info')[0];
 let table = document.getElementById('table-size');
+let modalImage = document.getElementById('modal-imagen');
 
 
 
@@ -59,12 +60,16 @@ fetch('/js/products.json')
 function showDetail() {
 
     let nodoImages = '';
+    let nodoImagesDesktop='';
     product.image.forEach((img, i) => {
         nodoImages += `<div class="swiper-slide">
                             <img src="${img}" id="selection-img${i}" alt="${product.name}">
                         </div>`;
-
+        nodoImagesDesktop += `<div class="swiper-slide">
+                                <img src="${img}" id="selection-img${i+product.image.length}" alt="${product.name}">
+                            </div>`;
     });
+    
 
     let nodoTalles = '';
     product.size.forEach(size => {
@@ -74,20 +79,14 @@ function showDetail() {
     detailHeader.innerHTML=`<h2>${product.name}</h2>
                             <h5>${product.category}</h5>`;
 
-    detailImage.innerHTML=`<img id="image-main" src="${product.image[0]}" alt="blazer">`;
-    // detailImage.innerHTML=`<div><img id="image-main" src="${product.image[0]}" alt="blazer"></div>
-    // <div class="swiper mySwiper" id="swiper-detail-desktop">
+    modalImage.innerHTML = `<img src="${product.image[0]}" alt="imagenProducto">`
 
-    //     <div class="swiper-wrapper" >
-    //         ${nodoImages}
-    //     </div>
-    //     <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
-    //         aria-controls="swiper-wrapper-f55e8b9a8b2d1432" aria-disabled="false"></div>
-    //     <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"
-    //         aria-controls="swiper-wrapper-f55e8b9a8b2d1432" aria-disabled="false"></div>
-    //     <div class="swiper-pagination"></div>
-    // </div>`;
-
+    detailImage.innerHTML=`<button type="button" data-bs-toggle="modal" data-bs-target="#modal-imagen-main">
+                            <img id="image-main" src="${product.image[0]}" alt="imagenProducto"><button>
+                            `;
+    document.getElementById('container-image-main-desktop').innerHTML = `<button type="button" data-bs-toggle="modal" data-bs-target="#modal-imagen-main">
+    <img id="image-main-desktop" src="${product.image[0]}" alt="imagenProducto"><button>`;
+    document.getElementById('swiper-detail-desktop').innerHTML = nodoImagesDesktop;
     swiperDetailImages.innerHTML=`${nodoImages}`
 
     detailInfo.innerHTML=`
@@ -95,7 +94,7 @@ function showDetail() {
                                 <h3>${priceConvertToArs(product.price)}</h3>
                             </div>
                             <div class="detail-info-price-curva">
-                                <h5>Precio por curva ${priceConvertToArs(product.price * product.size.length)}<button type="button" class="" data-bs-toggle="modal" data-bs-target="#modal-curva"><i class="bi bi-question-circle"></i></button></h5>
+                                <h4>Precio por curva ${priceConvertToArs(product.price * product.size.length)}<button type="button" class="" data-bs-toggle="modal" data-bs-target="#modal-curva"><i class="bi bi-question-circle"></i></button></h4>
                             </div>
                             <div class="detail-info-talles">
                                 <p>Talles: ${nodoTalles}</p>
@@ -132,8 +131,9 @@ function showDetail() {
 // funcionalidad images
     for (let i = 0; i < product.image.length; i++) {
         document.getElementById(`selection-img${i}`).onclick = () => {
-            document.getElementById(`selection-img${i}`).style.border = '4px solid #85586F'
-            document.getElementById('image-main').src = `${product.image[i]}`
+            document.getElementById(`selection-img${i}`).style.border = '4px solid #85586F';
+            document.getElementById('image-main').src = `${product.image[i]}`;
+            modalImage.innerHTML = `<img src="${product.image[i]}" alt="imagenProducto">`
             for (let j = 0; j < product.image.length; j++) {
                 if(j!=i){
                     document.getElementById(`selection-img${j}`).style.border = 'none'
@@ -141,6 +141,20 @@ function showDetail() {
             }
         }
     }
+    // desktop
+    for (let i = product.image.length; i < product.image.length * 2; i++) {
+        document.getElementById(`selection-img${i}`).onclick = () => {
+            document.getElementById(`selection-img${i}`).style.border = '4px solid #85586F';
+            document.getElementById('image-main-desktop').src = `${product.image[i-product.image.length]}`;
+            modalImage.innerHTML = `<img src="${product.image[i-product.image.length]}" alt="imagenProducto">`
+            for (let j = product.image.length; j < product.image.length * 2; j++) {
+                if(j!=i){
+                    document.getElementById(`selection-img${j}`).style.border = 'none'
+                }
+            }
+        }
+    }
+    
 
     document.getElementById("addCount").onclick = () => {
         count = count + 1
