@@ -24,7 +24,7 @@ function showProducts(){
     let nodo = ''
     products.forEach(prod => {
         nodo +=`<div class="category-content">
-                    <div class="swiper-slide">
+                    
                         <div class="custom-card">
                             <img src="${prod.image[0]}" alt="blazer">
                             <h3>${prod.name}</h3>
@@ -32,7 +32,7 @@ function showProducts(){
                             <p>$ ${prod.price}</p>
                             <a href="/pages/detail.html?id=${prod.id}">+ Info</a>
                         </div>
-                    </div>
+                    
                 </div>
                 `
     });

@@ -75,6 +75,18 @@ function showDetail() {
                             <h5>${product.category}</h5>`;
 
     detailImage.innerHTML=`<img id="image-main" src="${product.image[0]}" alt="blazer">`;
+    // detailImage.innerHTML=`<div><img id="image-main" src="${product.image[0]}" alt="blazer"></div>
+    // <div class="swiper mySwiper" id="swiper-detail-desktop">
+
+    //     <div class="swiper-wrapper" >
+    //         ${nodoImages}
+    //     </div>
+    //     <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+    //         aria-controls="swiper-wrapper-f55e8b9a8b2d1432" aria-disabled="false"></div>
+    //     <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"
+    //         aria-controls="swiper-wrapper-f55e8b9a8b2d1432" aria-disabled="false"></div>
+    //     <div class="swiper-pagination"></div>
+    // </div>`;
 
     swiperDetailImages.innerHTML=`${nodoImages}`
 

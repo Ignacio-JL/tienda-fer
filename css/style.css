@@ -8447,6 +8447,7 @@ body footer .footer-categorias ul {
   justify-content: space-around; }
 
 body .swiper .custom-card {
+  height: 34rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -8470,6 +8471,32 @@ body .swiper .swiper-button-next:after,
 body .swiper .swiper-button-prev:after {
   color: #85586F;
   font-size: 2.5rem; }
+
+@media (min-width: 768px) {
+  body .swiper .custom-card {
+    width: 14rem; }
+    body .swiper .custom-card img {
+      width: 200px; } }
+
+@media (min-width: 1024px) {
+  body .swiper .custom-card {
+    width: 82%; }
+    body .swiper .custom-card img {
+      width: 230px; } }
+
+@media (min-width: 1350px) {
+  body .swiper .custom-card {
+    width: 77%;
+    height: 42rem; }
+    body .swiper .custom-card img {
+      width: 280px; } }
+
+@media (min-width: 1500px) {
+  body .swiper .custom-card {
+    width: 77%;
+    height: 46rem; }
+    body .swiper .custom-card img {
+      width: 320px; } }
 
 body .detail {
   display: grid;
@@ -8735,6 +8762,7 @@ body .category-main {
   background-color: #36252d; }
   body .category-main .custom-card {
     padding: 1rem;
+    height: 35rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8752,6 +8780,31 @@ body .category-main {
       color: #fff;
       /* border-top-right-radius: 10px; */
       border-radius: 4px 20px 4px 20px; }
+
+@media (min-width: 425px) {
+  body .category-main .category-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    body .category-main .category-content .custom-card {
+      width: 63%; }
+      body .category-main .category-content .custom-card img {
+        width: 90%; } }
+
+@media (min-width: 460px) {
+  body .category-main .category-content .custom-card {
+    height: 39rem; }
+    body .category-main .category-content .custom-card img {
+      width: 275px; } }
+
+@media (min-width: 768px) {
+  body .category-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr; }
+    body .category-main .category-content .custom-card {
+      height: 100%; }
+      body .category-main .category-content .custom-card img {
+        max-width: 77%; } }
 
 body nav {
   background-color: #AC7D88; }
