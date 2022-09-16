@@ -3,6 +3,7 @@
 body {
     .swiper {
         .custom-card {
+            height: 34rem;
             padding: 1rem;
             display: flex;
             flex-direction: column;
@@ -31,7 +32,59 @@ body {
         .swiper-button-prev:after {
             color: $_colorPurpleLight;
             font-size: 2.5rem;
-            margin-right: 1rem;
+        }
+    }
+}
+
+@media (min-width: 768px){
+    body{
+        .swiper{
+            .custom-card{
+                width: 14rem;
+                img{
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px){
+    body{
+        .swiper{
+            .custom-card{
+                width: 82%;
+                img{
+                    width: 230px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1350px){
+    body{
+        .swiper{
+            .custom-card{
+                width: 77%;
+                height: 42rem;
+                img{
+                    width: 280px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1500px){
+    body{
+        .swiper{
+            .custom-card{
+                width: 77%;
+                height: 46rem;
+                img{
+                    width: 320px;
+                }
+            }
         }
     }
 }
