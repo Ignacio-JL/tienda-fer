@@ -81,6 +81,21 @@ function viewCart(){
                                                         <div>
                                                             <button type="submit">Terminar mi pedido</button>
                                                         </div>`
+        // function delete item
+
+        if(getCart().length !=0){
+            getCart().forEach(prod => {
+                        document.getElementById(`delete-${prod.id}`).onclick = () => {
+                            const newArray = getCart().filter(p => p.id != prod.id);
+                            setCart(newArray);
+                            viewCart();
+                        }
+                    });
+            document.getElementById('clearCart').onclick=() =>{
+                setCart([]);
+                viewCart();
+            }
+        }
     }
 }
 
@@ -99,20 +114,8 @@ viewCart();
 
 
 
-// function delete item
-if(getCart().length !=0){
-    getCart().forEach(prod => {
-                document.getElementById(`delete-${prod.id}`).onclick = () => {
-                    const newArray = getCart().filter(p => p.id != prod.id);
-                    setCart(newArray);
-                    viewCart();
-                }
-            });
-    document.getElementById('clearCart').onclick=() =>{
-        setCart([]);
-        viewCart();
-    }
-}
+
+
 
 /*
 
